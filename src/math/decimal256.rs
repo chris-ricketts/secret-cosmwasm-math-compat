@@ -362,7 +362,7 @@ impl ops::Div<Uint256> for Decimal256 {
     type Output = Self;
 
     fn div(self, rhs: Uint256) -> Self::Output {
-        Self(self.0 / rhs)
+        Self((self.0 * Self::DECIMAL_FRACTIONAL) / rhs)
     }
 }
 
